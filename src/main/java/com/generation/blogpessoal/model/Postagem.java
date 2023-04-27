@@ -14,7 +14,9 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import lombok.Data;
 
+@Data
 @Entity /* gerar tabela banco de dados */
 @Table(name = "tb_postagens") /* create table tb_postegens */
 public class Postagem {
@@ -42,47 +44,9 @@ public class Postagem {
 	@ManyToOne
 	private Tema tema;
 	
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getTitulo() {
-		return titulo;
-	}
-
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
-	}
-
-	public String getTexto() {
-		return texto;
-	}
-
-	public void setTexto(String texto) {
-		this.texto = texto;
-	}
-
-	public LocalDateTime getData() {
-		return data;
-	}
-
-	public void setData(LocalDateTime data) {
-		this.data = data;
-	}
-
-	/* Criar os Métodos Get e Set do Objeto Tema*/
+	@ManyToOne
+	@JsonIgnoreProperties("postagem")
+	private Usuario usuario;
 	
-	public Tema getTema() {
-		return tema;
-	}
 
-	public void setTema(Tema tema) {
-		this.tema = tema;
-	}
-	
-	
 }
