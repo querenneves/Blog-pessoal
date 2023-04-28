@@ -13,9 +13,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
-import lombok.Data;
 
-@Data
+
 @Entity /* gerar tabela banco de dados */
 @Table(name = "tb_temas") /* create table tb_postegens */
 public class Tema {
