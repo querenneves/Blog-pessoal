@@ -1,8 +1,6 @@
 package com.generation.blogpessoal.model;
 
-import lombok.Data;
 
-@Data
 public class UsuarioLogin {
 
 	private Long id;
