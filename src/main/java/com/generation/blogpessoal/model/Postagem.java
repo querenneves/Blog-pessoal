@@ -15,7 +15,6 @@ import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
-@Data
 @Entity /* gerar tabela banco de dados */
 @Table(name = "tb_postagens") /* create table tb_postegens */
 public class Postagem {
