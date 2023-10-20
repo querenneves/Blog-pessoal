@@ -12,6 +12,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.generation.blogpessoal.model.Usuario;
 import com.generation.blogpessoal.repository.UsuarioRepository;
+
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService{
 

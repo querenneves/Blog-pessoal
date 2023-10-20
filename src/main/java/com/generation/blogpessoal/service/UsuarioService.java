@@ -80,8 +80,8 @@ public class UsuarioService {
 				usuarioLogin.get().setId(usuario.get().getId());
 				usuarioLogin.get().setNome(usuario.get().getNome());
 				usuarioLogin.get().setFoto(usuario.get().getFoto());
-				usuarioLogin.get().setToken(gerarToken(usuarioLogin.get().getUsuario()));
 				usuarioLogin.get().setSenha("");
+				usuarioLogin.get().setToken(gerarToken(usuarioLogin.get().getUsuario()));
 
 				// Retorna o Objeto preenchido
 				return usuarioLogin;
@@ -94,16 +94,12 @@ public class UsuarioService {
 
 	}
 
-	private String criptografarSenha(String senha) {
-
-		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-
-		return encoder.encode(senha);
-
-	}
-
 	private String gerarToken(String usuario) {
 		return "Bearer " + jwtService.generateToken(usuario);
 	}
 
+	private String criptografarSenha(String senha) {
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		return encoder.encode(senha);
+	}
 }
